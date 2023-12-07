@@ -3,6 +3,24 @@
 //Course: LogProg1700 
 //Instructor: Hamlet Lin
 
+            //PSEUDO wiki\\
+/*For each country in the list of countries:
+    Create an option element
+    Set the value of the option to the country name
+    Set the text of the option to the country name
+
+    // Create an anchor element for the Wikipedia link
+    Create a wikiLink element
+    Set the href attribute of wikiLink to "https://en.wikipedia.org/wiki/" + country.Name // Adjust the URL structure if needed
+    Set the text content of wikiLink to " (Wikipedia)"
+
+    // Append the anchor element to the option element
+    Append wikiLink to the option element
+
+    // Append the option element to the dropdown
+    Append the option element to the dropdown
+*/
+
 
 document.addEventListener("DOMContentLoaded", function() {  
     // This part ensures that the script runs after the HTML document has been completely loaded. 
