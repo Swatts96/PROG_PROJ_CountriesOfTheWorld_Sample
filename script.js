@@ -48,21 +48,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 dropdown.appendChild(option);
             });
 
-            // set variable for our defaultCountryIndex that finds Canada within the index.
+            // set variable for our defaultCountryIndex that will be used to retrieve default flag instead of blank 
             var defaultCountryIndex = countries.findIndex(country => country.Name === "Canada");
             dropdown.selectedIndex = defaultCountryIndex;
+     
+              // Trigger the change event to load the default flag
+              var event = new Event("change");
+              dropdown.dispatchEvent(event);
+            })
+              .catch(error => console.error("Error fetching countries.json:", error));
+            //Catch error for missing files/mis-path 
+            //This sets up an event listener for the dropdown menu. When a country is selected, it retrieves the selected country, generates the corresponding flag image file name, constructs the file path, and updates the src attribute of the flag image element to display the selected country's flag.
+                dropdown.addEventListener("change", function() {
+                    var selectedCountry = dropdown.value;
+                    //Set the flag image source based on the selected country
+                    var flagFileName = selectedCountry.charAt(0).toUpperCase() + selectedCountry.slice(1) + ".png";
+                    var flagFilePath = "flags/" + flagFileName;
+                    //Update the flag image
+                    flagImage.src = flagFilePath;
+                });
+            })
 
-    // Event listener for dropdown change
-    //This sets up an event listener for the dropdown menu. When a country is selected, it retrieves the selected country, generates the corresponding flag image file name, constructs the file path, and updates the src attribute of the flag image element to display the selected country's flag.
-    dropdown.addEventListener("change", function() {
-        var selectedCountry = dropdown.value;
-        //Set the flag image source based on the selected country
-        var flagFileName = selectedCountry.charAt(0).toUpperCase() + selectedCountry.slice(1) + ".png";
-        var flagFilePath = "flags/" + flagFileName;
-        //Update the flag image
-        flagImage.src = flagFilePath;
-    });
-})
-.catch(error => console.error("Error fetching countries.json:", error));
-// If there's an error during the fetching process, it logs an error message to the console.
-});
+
