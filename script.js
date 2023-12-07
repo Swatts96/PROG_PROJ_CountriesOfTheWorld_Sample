@@ -1,3 +1,7 @@
+//Author: Sam Watts
+//Date: Dec 2023
+//Course: LogProg1700 
+//Instructor: Hamlet Lin
 <img id="flagImage" src="" alt="Country Flag">
 </img>//I added an <img> element with the ID "flagImage" to display the flag:
 
