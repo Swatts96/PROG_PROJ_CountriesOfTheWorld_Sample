@@ -1,8 +1,8 @@
-//<img id="flagImage" src="" alt="Country Flag">
-//I added an <img> element with the ID "flagImage" to display the flag:
+<img id="flagImage" src="" alt="Country Flag">
+</img>//I added an <img> element with the ID "flagImage" to display the flag:
 
-//dropdown.addEventListener("change", function() {
-    /*
+dropdown.addEventListener("change", function() {
+    
     var selectedCountry = dropdown.value;
 
     // Set the flag image source based on the selected country
@@ -12,10 +12,10 @@
     // Update the flag image
     flagImage.src = flagFilePath;
 });
-*/
+
 
 //These changes ensure that the flag image updates dynamically based on the selected country in the dropdown. Remember to adjust file paths and naming conventions if needed.
-/*
+
 document.addEventListener("DOMContentLoaded", function() {  
     // This part ensures that the script runs after the HTML document has been completely loaded. 
     
@@ -54,6 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.error("Error fetching countries.json:", error));
         // If there's an error during the fetching process, it logs an error message to the console.
 });
-*/ 
+
 
 //Code I worked on briefly with a friend over a bowl of ramen. Using a fetch statement to retrieve data from the JSON file, 
