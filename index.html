@@ -5,17 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="FPstyle.css">
-    <title>Sam's Final Project</title>
+    <title>InternationalInfo</title>
 </head>
 <body>
 
- 
+    <div class="main-container">
+        <header class="page-header">
+            <h1>Your Page Title</h1>
+        </header>
+
     <div>
         <label for="countryDropdown">Select a country:</label>
-        <select id="countryDropdown"></select>
+        <select id="countryDropdown"></select><br>
+        <img id="flagImage" src="" alt="Country Flag"> 
     </div>
 
-    <img id="flagImage" src="" alt="Country Flag">
+    <div class="action-buttons">
+        <button id="wikiButton">Wiki</button>
+        <button id="quizButton">Quiz Me</button>
+    </div>
+   
+    <div class="country-details">
+        <h2>Country Details</h2>
+        <p id="populationDisplay">Population: <span id="populationValue">N/A</span></p>
+        <p id="worldPopulationPercentage">World Population Percentage: <span id="percentageValue">N/A</span></p>
+    </div>
 
 <script defer src="script.js"></script> 
 </body>
