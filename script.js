@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch("countries.json")
         .then(response => response.json())
         .then(countries => { 
-
             // Once the JSON data is successfully fetched and parsed as an array of country objects, this part creates an option element for each country, sets its value and text properties to the country name, and appends it to the dropdown menu.
             // TLDR Populate the dropdown with country names
             countries.forEach(function(country) {
@@ -49,16 +48,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 dropdown.appendChild(option);
             });
 
+            // set variable for our defaultCountryIndex that finds Canada within the index.
+            var defaultCountryIndex = countries.findIndex(country => country.Name === "Canada");
+            dropdown.selectedIndex = defaultCountryIndex;
+
     // Event listener for dropdown change
     //This sets up an event listener for the dropdown menu. When a country is selected, it retrieves the selected country, generates the corresponding flag image file name, constructs the file path, and updates the src attribute of the flag image element to display the selected country's flag.
     dropdown.addEventListener("change", function() {
         var selectedCountry = dropdown.value;
-
-        // Set the flag image source based on the selected country
+        //Set the flag image source based on the selected country
         var flagFileName = selectedCountry.charAt(0).toUpperCase() + selectedCountry.slice(1) + ".png";
         var flagFilePath = "flags/" + flagFileName;
-
-        // Update the flag image
+        //Update the flag image
         flagImage.src = flagFilePath;
     });
 })
