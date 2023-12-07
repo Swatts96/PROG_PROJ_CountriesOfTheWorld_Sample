@@ -1,54 +1,40 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
+    background-color: ;
+}
+
+.main-container {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 1.5em;
 }
 
 #countryDropdown {
+    margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #f0a0a0;
     border-radius: 5px;
-    margin-bottom: 10px; /* Adjusted to match your original margin-bottom */
 }
 
 #flagImage {
     max-width: 100%;
     height: auto;
 }
-
-.main-container {
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-.page-header {
-    height: 300px;
-    width: 100%;
-    background-image: url('header-photo.jpg'); /* Replace with your actual image */
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.page-header h1 {
-    color: white;
-    font-size: 2em;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.country-section {
-    text-align: center;
-    margin-bottom: 10px; /* Adjusted to match your original margin-bottom */
-}
-
 
 .action-buttons {
     display: flex;
@@ -58,3 +44,5 @@ body {
 .country-details {
     text-align: center;
 }
+
+/* Add additional styling as needed */
