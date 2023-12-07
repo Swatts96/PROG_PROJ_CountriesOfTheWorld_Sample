@@ -16,11 +16,16 @@
 
     // Append the anchor element to the option element
     Append wikiLink to the option element
-
     // Append the option element to the dropdown
-    Append the option element to the dropdown
 */
 
+    // HTML WILL DISPLAY \\ 
+    // Name of the Country! (done)
+    // An image of the country's flag (done)
+    // the population of the country 
+    // the country's total area, shown in sq. miles (by default) or sq. kilometres, according to user preference (refer to previous assignments(similar to KG conversion))
+    // The Country's population density per square mile (by default) or square KM, according to user preference ()
+    // The country's percentage of the total world population
 
 document.addEventListener("DOMContentLoaded", function() {  
     // This part ensures that the script runs after the HTML document has been completely loaded. 
@@ -44,19 +49,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 dropdown.appendChild(option);
             });
 
-            // Event listener for dropdown change
-            //This sets up an event listener for the dropdown menu. When a country is selected, it retrieves the selected country, generates the corresponding flag image file name, constructs the file path, and updates the src attribute of the flag image element to display the selected country's flag.
-            dropdown.addEventListener("change", function() {
-                var selectedCountry = dropdown.value;
+    // Event listener for dropdown change
+    //This sets up an event listener for the dropdown menu. When a country is selected, it retrieves the selected country, generates the corresponding flag image file name, constructs the file path, and updates the src attribute of the flag image element to display the selected country's flag.
+    dropdown.addEventListener("change", function() {
+        var selectedCountry = dropdown.value;
 
-                // Set the flag image source based on the selected country
-                var flagFileName = selectedCountry.charAt(0).toUpperCase() + selectedCountry.slice(1) + ".png";
-                var flagFilePath = "flags/" + flagFileName;
+        // Set the flag image source based on the selected country
+        var flagFileName = selectedCountry.charAt(0).toUpperCase() + selectedCountry.slice(1) + ".png";
+        var flagFilePath = "flags/" + flagFileName;
 
-                // Update the flag image
-                flagImage.src = flagFilePath;
-            });
-        })
-        .catch(error => console.error("Error fetching countries.json:", error));
-        // If there's an error during the fetching process, it logs an error message to the console.
+        // Update the flag image
+        flagImage.src = flagFilePath;
+    });
+})
+.catch(error => console.error("Error fetching countries.json:", error));
+// If there's an error during the fetching process, it logs an error message to the console.
 });
