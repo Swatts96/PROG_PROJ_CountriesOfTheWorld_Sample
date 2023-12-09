@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+   
     min-height: 100vh;
     border-left-width: 5px;
     border-right-width: 5px;
@@ -36,6 +36,7 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+    margin-bottom: 10px;
 }
 
 .page-header {
@@ -48,6 +49,11 @@ body {
     font-size: 1.5em;
     color: black;
 }
+
+.flagbox {
+    padding-top: 5px;
+}
+
 
 #countryDropdown {
     margin-bottom: 10px;
@@ -65,7 +71,8 @@ body {
 
 .action-buttons {
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    padding-top: 5px;
 }
 
 .country-details {

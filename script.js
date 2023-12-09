@@ -69,4 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
             })
 
+
+            
 // add function for determining world pop % (parseint(Country pop / 7,888,000,0000).tofixed(2))
