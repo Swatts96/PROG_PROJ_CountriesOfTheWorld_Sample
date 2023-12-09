@@ -35,8 +35,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(255, 255, 255);
     margin-bottom: 10px;
+}
+
+.detailHeader {
+    text-decoration: underline;
 }
 
 .page-header {
@@ -58,8 +62,8 @@ body {
 #countryDropdown {
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #f0a0a0;
-    border-radius: 5px;
+    border: 1px solid rgb(79, 104, 179);
+    border-radius: 25px;
 }
 
 #flagImage {
@@ -72,11 +76,20 @@ body {
 .action-buttons {
     display: flex;
     gap: 40px;
-    padding-top: 5px;
+    padding: 10px;
 }
+#quizButton {
+    border-radius: 25px;
+}
+
+#wikiButton {
+    border-radius: 25px;
+}
+
 
 .country-details {
     text-align: center;
+    border: 5px solid rgb(255, 0, 0); /* Replace with your desired RGB values */
 }
 
 /* Add additional styling as needed */
