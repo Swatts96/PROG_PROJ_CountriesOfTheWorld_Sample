@@ -62,7 +62,7 @@ body {
 #countryDropdown {
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid rgb(79, 104, 179);
+    border: 2px solid rgb(91,146,229);
     border-radius: 25px;
 }
 
@@ -86,10 +86,14 @@ body {
     border-radius: 25px;
 }
 
-
 .country-details {
+    padding-top: 10x;
+    width: 400px;
+    height: 150px;
     text-align: center;
-    border: 5px solid rgb(255, 0, 0); /* Replace with your desired RGB values */
+    border: 2px solid rgb(91,146,229); /* Replace with your desired RGB values */
+    border-radius: 25px;
+    
 }
 
 /* Add additional styling as needed */
