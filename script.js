@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var areaDisplay = document.getElementById("areaDisplay");
     var selectedCountryName = document.getElementById("selectedCountryName");
 
-    const worldPop = 7888000000;
-   
    
     fetch("countries.json")
         .then(response => response.json())
@@ -50,13 +48,12 @@ document.addEventListener("DOMContentLoaded", function() {
         var flagFilePath = "flags/" + flagFileName;
         //Update the flag image
         flagImage.src = flagFilePath;
+
+    
     });
 })
 
 
-        dropdown.addEventListener("change", function() {
-
-        })
 
  // Fetch comments
     // These lines select HTML elements respectively. 
