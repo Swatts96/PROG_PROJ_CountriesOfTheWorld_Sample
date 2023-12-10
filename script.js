@@ -3,29 +3,6 @@
 //Course: LogProg1700 
 //Instructor: Hamlet Lin
 
-            //PSEUDO wiki\\
-/*For each country in the list of countries:
-    Create an option element
-    Set the value of the option to the country name
-    Set the text of the option to the country name
-
-    // Create an anchor element for the Wikipedia link
-    Create a wikiLink element
-    Set the href attribute of wikiLink to "https://en.wikipedia.org/wiki/" + country.Name // Adjust the URL structure if needed
-    Set the text content of wikiLink to " (Wikipedia)"
-
-    // Append the anchor element to the option element
-    Append wikiLink to the option element
-    // Append the option element to the dropdown
-*/
-
-    // HTML WILL DISPLAY \\ 
-    // Name of the Country! (done)
-    // An image of the country's flag (done)
-    // the population of the country 
-    // the country's total area, shown in sq. miles (by default) or sq. kilometres, according to user preference (refer to previous assignments(similar to KG conversion))
-    // The Country's population density per square mile (by default) or square KM, according to user preference ()
-    // The country's percentage of the total world population
 
 document.addEventListener("DOMContentLoaded", function() {  
     // This part ensures that the script runs after the HTML document has been completely loaded. 
