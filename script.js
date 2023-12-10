@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     var dropdown = document.getElementById("countryDropdown");
     var flagImage = document.getElementById("flagImage");
+    var populationDisplay = document.getElementById("populationDisplay");
+    var areaDisplay = document.getElementById("areaDisplay");
    // These lines select HTML elements respectively. 
    //- Dropdown menu for selecting countries and an image tag for displaying the flag.
    //- populating our population container with the "Population" data (sorry)
