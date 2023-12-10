@@ -9,15 +9,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var dropdown = document.getElementById("countryDropdown");
     var flagImage = document.getElementById("flagImage");
-    var populationDisplay = document.getElementById("populationDisplay");
-    var areaDisplay = document.getElementById("areaDisplay");
     var selectedCountryName = document.getElementById("selectedCountryName");
+    var populationDisplay = document.getElementById("populationValue");
+    var worldPopulationPercentageDisplay = document.getElementById("percentageValue");
+    var areaDisplay = document.getElementById("areaValue");
 
-    const worldPopulation = 7888888888
+    var countries; // Variable to store the JSON data
+    const worldPopulation = 7888888888; // Variable to store world population
    
     fetch("countries.json") //fetch api retrieving contents of our countries.json file
         .then(response => response.json())
-        .then(countries => {
+        .then(countriesData => {
+            countries = countriesData;
             // Individual Country Comments
             // Once the JSON data is successfully fetched and parsed as an array of country objects, this part creates an option element for each country, 
             // sets its value and text properties to the country name, and appends it to the dropdown menu.
@@ -27,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 option.text = country.Name;
                 dropdown.appendChild(option);
             });
-
             // Default Country/Home Country (Assigning a home page)
             // set variable for our defaultCountryIndex that will be used to retrieve default flag instead of blank 
             var defaultCountryIndex = countries.findIndex(country => country.Name === "Canada");
@@ -38,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
             var event = new Event("change");
             dropdown.dispatchEvent(event);
         })
-
         .catch(error => console.error("Error fetching countries.json:", error));
     
     dropdown.addEventListener("change", function() {
@@ -49,10 +50,28 @@ document.addEventListener("DOMContentLoaded", function() {
         //Update the flag image
         flagImage.src = flagFilePath;
 
-    
+        
+        // Find the selected country in the JSON data
+        var selectedCountryData = countries.find(country => country.Name === selectedCountry);
+
+        // Update HTML content
+        selectedCountryName.textContent = selectedCountry;
+        populationDisplay.textContent = selectedCountryData ? selectedCountryData.Population : "N/A";
+        worldPopulationPercentageDisplay.textContent = selectedCountryData ? calculateWorldPopulationPercentage(selectedCountryData.Population) : "N/A";
+        areaDisplay.textContent = selectedCountryData ? selectedCountryData.Area : "N/A";
+   
     });
 })
 
+// Function to calculate world population
+function calculateWorldPopulation(countries) {
+    return countries.reduce((total, country) => total + country.Population, 0);
+}
+
+// Function to calculate world population percentage
+function calculateWorldPopulationPercentage(countryPopulation) {
+    return ((countryPopulation / worldPopulation) * 100).toFixed(2) + "%";
+}
 
 
  // Fetch comments
