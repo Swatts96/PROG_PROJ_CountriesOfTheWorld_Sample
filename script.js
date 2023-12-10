@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             dropdown.selectedIndex = defaultCountryIndex;
             // Trigger the change event to load the default flag (event comments)
             // Event being a term we haven't used much, but w3 explains well. 
-            // any change, event or anything that happens to an html element upon command, in this case changing the flag countryIndex to Canada by default. 
+            // any change, event or anything that happens to an html element upon command, in this case changing the flag countryIndex to Canada
             var event = new Event("change");
             dropdown.dispatchEvent(event);
         })
