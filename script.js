@@ -2,12 +2,9 @@
 //Date: Dec 2023
 //Course: LogProg1700 
 //Instructor: Hamlet Lin
-
-
-
-
  // This part ensures that the script runs after the HTML document has been completely loaded. 
  //also defines a function for the entire html, so building within this. (stop adding functions outside) 
+
 document.addEventListener("DOMContentLoaded", function() {
 
     var dropdown = document.getElementById("countryDropdown");
@@ -16,8 +13,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var areaDisplay = document.getElementById("areaDisplay");
     var selectedCountryName = document.getElementById("selectedCountryName");
 
+    const worldPopulation = 7888888888
    
-    fetch("countries.json")
+    fetch("countries.json") //fetch api retrieving contents of our countries.json file
         .then(response => response.json())
         .then(countries => {
             // Individual Country Comments
@@ -29,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 option.text = country.Name;
                 dropdown.appendChild(option);
             });
+
             // Default Country/Home Country (Assigning a home page)
             // set variable for our defaultCountryIndex that will be used to retrieve default flag instead of blank 
             var defaultCountryIndex = countries.findIndex(country => country.Name === "Canada");
@@ -39,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var event = new Event("change");
             dropdown.dispatchEvent(event);
         })
+
         .catch(error => console.error("Error fetching countries.json:", error));
     
     dropdown.addEventListener("change", function() {
