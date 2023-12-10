@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch("countries.json") //fetch api retrieving contents of our countries.json file
         .then(response => response.json())
         .then(countriesData => {
-            countries = countriesData;
+            countries = countriesData; // 3 hours troubleshooting for this one missing line 
             // Individual Country Comments
             // Once the JSON data is successfully fetched and parsed as an array of country objects, this part creates an option element for each country, 
             // sets its value and text properties to the country name, and appends it to the dropdown menu.
