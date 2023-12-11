@@ -61,10 +61,10 @@ document.addEventListener("DOMContentLoaded", function() {
         //"this" will occur upon click, 
         wikiButton.addEventListener('click', function() {
             // Change the link by setting the window.location.href property
-            wikiButton.href = wikiLink;
+            window.location.href = wikiLink;
             console.log(wikiLink);
         });
-
+        console.log(countries);
 
         //Update the flag image
         flagImage.src = flagFilePath;
