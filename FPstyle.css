@@ -27,7 +27,7 @@ body {
 .main-header {
     width: 100%;
     height: 300px;
-    background-image: url('UNFLAGBANNER.png'); /* Replace with your actual image */
+    background-image: url('UNFLAGBANNER.png'); 
     background-size: contain;
     background-position: center;
     text-align: center;
@@ -88,12 +88,12 @@ label[for="areaDropdown"] {
     margin: 0 auto;
 }
 .area-container{
-    padding-top: 10x;
-    padding-top: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 400px;
     height: 75px;
     text-align: center;
-    border: 2px solid rgb(1, 27, 66); /* Replace with your desired RGB values */
+    border: 2px solid rgb(1, 27, 66); 
     border-radius: 25px;
 }
 
@@ -112,10 +112,11 @@ label[for="areaDropdown"] {
 
 .country-details {
     padding-top: 10x;
+    padding-bottom: 10x;
     width: 400px;
     height: 150px;
     text-align: center;
-    border: 2px solid rgb(91,146,229); /* Replace with your desired RGB values */
+    border: 2px solid rgb(91,146,229); 
     border-radius: 25px;
     margin-bottom: 25px;
     margin-top: 25px;
@@ -124,12 +125,13 @@ label[for="areaDropdown"] {
 .density-radio {
     padding-top: 10x;
     width: 400px;
-    height: 75px;
+    height: 100px;
     text-align: center;
-    border: 2px solid rgb(91,146,229); /* Replace with your desired RGB values */
+    padding-bottom: 1px;
+    border: 2px solid rgb(91,146,229); 
     border-radius: 25px;
     margin-bottom: 25px;
     margin-top: 25px;
 }
 
-/* Add additional styling as needed */
+

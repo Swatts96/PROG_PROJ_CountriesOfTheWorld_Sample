@@ -2,10 +2,11 @@
 //Date: Dec 2023
 //Course: LogProg1700 
 //Instructor: Hamlet Lin
+//Ready for Marking
+
 
  // This part ensures that the script runs after the HTML document has been completely loaded. 
  //also defines a function for the entire html, so building within this. (stop adding functions outside) 
-
  document.addEventListener("DOMContentLoaded", function() {
 
     var countryDropdown = document.getElementById("countryDropdown");
