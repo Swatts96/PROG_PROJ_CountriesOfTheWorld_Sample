@@ -15,10 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
     var worldPopulationPercentageDisplay = document.getElementById("percentageValue");
     var areaDisplay = document.getElementById("areaValue");
     var wikiButton = document.getElementById("wikiButton");
+    var areaDropdown = document.getElementById("areaDropdown");
 
     var countries; // Variable to store the JSON data
 
-    //"fetch/Load"
+
+//for miles to km = multiply the length value by 1.609 (miles(1.609))
+
+//"fetch/Load"
  // Fetch API comments
     // These lines select HTML elements respectively. 
     //- Dropdown menu for selecting countries and an image tag for displaying the flag.
@@ -51,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error("Error fetching countries.json:", error));
     
+
+
         countryDropdown.addEventListener("change", function() {
         var selectedCountry = countryDropdown.value;
         //Set the flag image source based on the selected country
@@ -64,9 +70,30 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = wikiLink;
             console.log(wikiLink);
         });
-        //want to view the entire json in your html inspect?
-        //use : console.log(countries);
-        //or console.log any object/variable/connection
+
+
+        areaDropdown.addEventListener("change", function() {
+            updateDisplayedArea();
+        });
+        
+        function updateDisplayedArea() {
+            var selectedOption = areaDropdown.value;
+            var selectedCountryData = countries.find(country => country.Name === countryDropdown.value);
+        
+            if (selectedCountryData) {
+                if (selectedOption === "SqMiles") {
+                    areaDisplay.textContent = selectedCountryData.Area;
+                } else if (selectedOption === "SqKilometers") {
+                    var areaInKilometers = selectedCountryData.Area * 1.6;
+                    areaDisplay.textContent = areaInKilometers.toFixed(2);
+                }
+            } else {
+                areaDisplay.textContent = "N/A";
+            }
+        }
+        
+
+
         //Update the flag image
         flagImage.src = flagFilePath;
 
@@ -84,7 +111,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
         areaDisplay.textContent = selectedCountryData ? selectedCountryData.Area : "N/A";
     });
+    
 })
+
 
  // Function to calculate world population
  function calculateWorldPopulation(countries) {

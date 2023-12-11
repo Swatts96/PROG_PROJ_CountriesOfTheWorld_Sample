@@ -36,10 +36,16 @@
         <p id="populationDisplay">Population: <span id="populationValue">N/A</span></p>
         <p id="worldPopulationPercentage">World Population Percentage: <span id="percentageValue">N/A</span></p>
     </div>
-
+   
     <div class="area-container">
-        <p id="areaDisplay">Area in:<span id="areaValue">N/A</span></p>
+        <label for="areaDropdown">Display Area in:<br></label>
+        <select id="areaDropdown"><br>
+        <option value="SqMiles">Sq. Miles</option>
+        <option value="SqKilometers">Sq. Kilometers</option>
+        </select>
+        <span id="areaValue">N/A</span>
     </div>
+
 
 </div>
 <script defer src="script.js"></script> 
