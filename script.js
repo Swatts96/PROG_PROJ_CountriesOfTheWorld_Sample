@@ -18,8 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var areaDropdown = document.getElementById("areaDropdown");
     var countries; // Variable to store the JSON data
 
-    var populationDensity = document.getElementById("populationDensity");
-    var populationDensityDisplay = document.getElementById("yourPopulationDensityDisplayElementId");
+    var densityResultDisplay = document.getElementById("densityResultDisplay");
 
     // Fetch API comments
     // These lines select HTML elements respectively. 
@@ -88,30 +87,41 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
 
-        document.querySelectorAll('input[name="populationDensity"]').forEach(function(radio) {
+
+
+
+        document.querySelectorAll('.density-radio input[name="populationDensity"]').forEach(function(radio) {
             radio.addEventListener('change', function() {
                 updateDisplayedPopulationDensity();
             });
         });
-
+    
         function updateDisplayedPopulationDensity() {
             var selectedCountryData = countries.find(country => country.Name === countryDropdown.value);
             var populationValue = selectedCountryData ? selectedCountryData.Population : 0;
     
             // Check the selected radio button for population density unit
-            var selectedRadio = document.querySelector('input[name="populationDensity"]:checked');
+            var selectedRadio = document.querySelector('.density-radio input[name="populationDensity"]:checked');
             
-            if (selectedRadio.value === "PerSqMile") {
-                populationDensity = populationValue / selectedCountryData.Area;
-                populationDensityDisplay.textContent = populationDensity.toFixed(2);
-            } else if (selectedRadio.value === "PerSqKilometer") {
-                populationDensity = populationValue / (selectedCountryData.Area * 1.6);
-                populationDensityDisplay.textContent = populationDensity.toFixed(2);
+            if (selectedRadio.value === "SqMile") {
+                var populationDensity = populationValue / selectedCountryData.Area;
+                densityResultDisplay.textContent = populationDensity.toFixed(2);
+            } else if (selectedRadio.value === "SqKilometer") {
+                var populationDensity = populationValue / (selectedCountryData.Area * 1.6);
+                densityResultDisplay.textContent = populationDensity.toFixed(2);
             } else {
-                populationDensityDisplay.textContent = "N/A";
+                densityResultDisplay.textContent = "N/A";
             }
         }
 
+
+
+
+
+
+
+
+        
 
         //Update the flag image
         flagImage.src = flagFilePath;

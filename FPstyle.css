@@ -124,7 +124,7 @@ label[for="areaDropdown"] {
 .density-radio {
     padding-top: 10x;
     width: 400px;
-    height: 50px;
+    height: 75px;
     text-align: center;
     border: 2px solid rgb(91,146,229); /* Replace with your desired RGB values */
     border-radius: 25px;
