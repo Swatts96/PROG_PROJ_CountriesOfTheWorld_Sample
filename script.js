@@ -64,8 +64,9 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = wikiLink;
             console.log(wikiLink);
         });
-        console.log(countries);
-
+        //want to view the entire json in your html inspect?
+        //use : console.log(countries);
+        //or console.log any object/variable/connection
         //Update the flag image
         flagImage.src = flagFilePath;
 
