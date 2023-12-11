@@ -54,14 +54,15 @@ document.addEventListener("DOMContentLoaded", function() {
         countryDropdown.addEventListener("change", function() {
         var selectedCountry = countryDropdown.value;
         //Set the flag image source based on the selected country
-        var countryName = selectedCountry.charAt(0).toUpperCase() + selectedCountry.slice(1) + ".png"; 
-        var flagFilePath = "flags/" + countryName;
+        var countryName = selectedCountry.charAt(0).toUpperCase() + selectedCountry.slice(1); 
+        var flagFilePath = "flags/" + countryName + ".png";
         var wikiLink = "https://en.wikipedia.org/wiki/" + countryName;
 
         //"this" will occur upon click, 
         wikiButton.addEventListener('click', function() {
             // Change the link by setting the window.location.href property
             wikiButton.href = wikiLink;
+            console.log(wikiLink);
         });
 
 
