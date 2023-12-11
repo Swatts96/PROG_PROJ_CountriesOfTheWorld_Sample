@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
             // Check the selected radio button for population density unit
             var selectedRadio = document.querySelector('.density-radio input[name="populationDensity"]:checked');
             
-            if (selectedRadio.value === "SqMile") {
+            if (selectedRadio.value === "PerSqMile") {
                 var populationDensity = populationValue / selectedCountryData.Area;
                 densityResultDisplay.textContent = populationDensity.toFixed(2);
-            } else if (selectedRadio.value === "SqKilometer") {
+            } else if (selectedRadio.value === "PerSqKilometer") {
                 var populationDensity = populationValue / (selectedCountryData.Area * 1.6);
                 densityResultDisplay.textContent = populationDensity.toFixed(2);
             } else {
