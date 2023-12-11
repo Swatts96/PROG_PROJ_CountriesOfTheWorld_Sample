@@ -16,14 +16,12 @@ document.addEventListener("DOMContentLoaded", function() {
     var areaDisplay = document.getElementById("areaValue");
     var wikiButton = document.getElementById("wikiButton");
     var areaDropdown = document.getElementById("areaDropdown");
-
     var countries; // Variable to store the JSON data
 
+    var populationDensity = document.getElementById("populationDensity");
+    var populationDensityDisplay = document.getElementById("yourPopulationDensityDisplayElementId");
 
-//for miles to km = multiply the length value by 1.609 (miles(1.609))
-
-//"fetch/Load"
- // Fetch API comments
+    // Fetch API comments
     // These lines select HTML elements respectively. 
     //- Dropdown menu for selecting countries and an image tag for displaying the flag.
     //- populating our population container with the "Population" data (sorry)
@@ -55,8 +53,6 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error("Error fetching countries.json:", error));
     
-
-
         countryDropdown.addEventListener("change", function() {
         var selectedCountry = countryDropdown.value;
         //Set the flag image source based on the selected country
@@ -70,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = wikiLink;
             console.log(wikiLink);
         });
-
 
         areaDropdown.addEventListener("change", function() {
             updateDisplayedArea();
@@ -93,11 +88,34 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
 
+        document.querySelectorAll('input[name="populationDensity"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                updateDisplayedPopulationDensity();
+            });
+        });
+
+        function updateDisplayedPopulationDensity() {
+            var selectedCountryData = countries.find(country => country.Name === countryDropdown.value);
+            var populationValue = selectedCountryData ? selectedCountryData.Population : 0;
+    
+            // Check the selected radio button for population density unit
+            var selectedRadio = document.querySelector('input[name="populationDensity"]:checked');
+            
+            if (selectedRadio.value === "PerSqMile") {
+                populationDensity = populationValue / selectedCountryData.Area;
+                populationDensityDisplay.textContent = populationDensity.toFixed(2);
+            } else if (selectedRadio.value === "PerSqKilometer") {
+                populationDensity = populationValue / (selectedCountryData.Area * 1.6);
+                populationDensityDisplay.textContent = populationDensity.toFixed(2);
+            } else {
+                populationDensityDisplay.textContent = "N/A";
+            }
+        }
+
 
         //Update the flag image
         flagImage.src = flagFilePath;
 
-        
         // Find the selected country in the JSON data
         var selectedCountryData = countries.find(country => country.Name === selectedCountry);
             var worldPopulation = calculateWorldPopulation(countries);
@@ -110,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
         worldPopulationPercentageDisplay.textContent = selectedCountryData ? calculateWorldPopulationPercentage(selectedCountryData.Population, worldPopulation) : "N/A";
 
         areaDisplay.textContent = selectedCountryData ? selectedCountryData.Area : "N/A";
-    });
+    }); //comment more to explain use of ? 
     
 })
 
