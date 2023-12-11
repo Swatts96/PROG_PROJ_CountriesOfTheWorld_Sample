@@ -57,9 +57,11 @@ document.addEventListener("DOMContentLoaded", function() {
         var countryName = selectedCountry.charAt(0).toUpperCase() + selectedCountry.slice(1) + ".png"; 
         var flagFilePath = "flags/" + countryName;
         var wikiLink = "https://en.wikipedia.org/wiki/" + countryName;
+
+        //"this" will occur upon click, 
         wikiButton.addEventListener('click', function() {
             // Change the link by setting the window.location.href property
-            window.location.href = 'https://www.newlink.com/';
+            wikiButton.href = wikiLink;
         });
 
 
