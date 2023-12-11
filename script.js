@@ -14,9 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var populationDisplay = document.getElementById("populationValue");
     var worldPopulationPercentageDisplay = document.getElementById("percentageValue");
     var areaDisplay = document.getElementById("areaValue");
+    var wikiButton = document.getElementById("wikiButton");
 
     var countries; // Variable to store the JSON data
 
+    //"fetch/Load"
  // Fetch API comments
     // These lines select HTML elements respectively. 
     //- Dropdown menu for selecting countries and an image tag for displaying the flag.
@@ -52,8 +54,15 @@ document.addEventListener("DOMContentLoaded", function() {
         countryDropdown.addEventListener("change", function() {
         var selectedCountry = countryDropdown.value;
         //Set the flag image source based on the selected country
-        var flagFileName = selectedCountry.charAt(0).toUpperCase() + selectedCountry.slice(1) + ".png"; 
-        var flagFilePath = "flags/" + flagFileName;
+        var countryName = selectedCountry.charAt(0).toUpperCase() + selectedCountry.slice(1) + ".png"; 
+        var flagFilePath = "flags/" + countryName;
+        var wikiLink = "https://en.wikipedia.org/wiki/" + countryName;
+        wikiButton.addEventListener('click', function() {
+            // Change the link by setting the window.location.href property
+            window.location.href = 'https://www.newlink.com/';
+        });
+
+
         //Update the flag image
         flagImage.src = flagFilePath;
 
@@ -82,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function calculateWorldPopulationPercentage(countryPopulation, worldPopulation) {
     return ((countryPopulation / worldPopulation) * 100).toFixed(2) + "%";
 }
+
 
 
 //Catch error for missing files/mis-path 
