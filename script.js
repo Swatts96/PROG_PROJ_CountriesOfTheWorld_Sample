@@ -6,7 +6,7 @@
  // This part ensures that the script runs after the HTML document has been completely loaded. 
  //also defines a function for the entire html, so building within this. (stop adding functions outside) 
 
-document.addEventListener("DOMContentLoaded", function() {
+ document.addEventListener("DOMContentLoaded", function() {
 
     var countryDropdown = document.getElementById("countryDropdown");
     var flagImage = document.getElementById("flagImage");
@@ -89,13 +89,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
      
 
-
+        //radio button query selector/event listener, in order to retrieve population density using our selectedCountryData to use current Population and Area within our calculations 
         document.querySelectorAll('.density-radio input[name="populationDensity"]').forEach(function(radio) {
             radio.addEventListener('change', function() {
                 updateDisplayedPopulationDensity();
             });
         });
-    
+        //Function to calculate population density 
         function updateDisplayedPopulationDensity() {
             var selectedCountryData = countries.find(country => country.Name === countryDropdown.value);
             var populationValue = selectedCountryData ? selectedCountryData.Population : 0;

@@ -1,67 +1,62 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="FPstyle.css">
     <title>InternationalInfo</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-header">
-        <header class="page-header">
-            <div class="HeaderText">
-            <h1>Sam Watts</h1>
-            <h1>Logic and Programming 1700</h1>
-            <h1>- Countries of the World -</h1>
-        </header>
+      <header class="page-header">
+        <div class="HeaderText">
+          <h1>Sam Watts</h1>
+          <h1>Logic and Programming 1700</h1>
+          <h1>- Countries of the World -</h1>
+      </header>
     </div>
-</div>
+    </div>
     <div class="main-container">
-    
-    <div class="flagbox">
-        <label for="countryDropdown">Select a country:<br></label>
-        <select id="countryDropdown"></select><br>
+      <div class="flagbox">
+        <label for="countryDropdown">Select a country: <br>
+        </label>
+        <select id="countryDropdown"></select>
+        <br>
         <p id="selectedCountryName">N/a</p>
-        <img id="flagImage" src="" alt="Country Flag"> 
-    </div>
-
-    <div class="action-buttons">
+        <img id="flagImage" src="" alt="Country Flag">
+      </div>
+      <div class="action-buttons">
         <button id="wikiButton">Wiki</button>
         <button id="quizButton">Quiz Me</button>
-    </div>
-   
-    <div class="country-details">
+      </div>
+      <div class="country-details">
         <h2 class="detailHeader">Country Population Details</h2>
-        <p id="populationDisplay">Population: <span id="populationValue">N/A</span></p>
-        <p id="worldPopulationPercentage">World Population Percentage: <span id="percentageValue">N/A</span></p>
-    </div>
-   
-    <div class="area-container">
-        <label for="areaDropdown">Country Area in:<br></label>
-        <select id="areaDropdown"><br>
-        <option value="SqMiles">Sq. Miles</option>
-        <option value="SqKilometers">Sq. Kilometers</option>
+        <p id="populationDisplay">Population: <span id="populationValue">N/A</span>
+        </p>
+        <p id="worldPopulationPercentage">World Population Percentage: <span id="percentageValue">N/A</span>
+        </p>
+      </div>
+      <div class="area-container">
+        <label for="areaDropdown">Country Area in: <br>
+        </label>
+        <select id="areaDropdown">
+          <br>
+          <option value="SqMiles">Sq. Miles</option>
+          <option value="SqKilometers">Sq. Kilometers</option>
         </select>
         <span id="areaValue">N/A</span>
-    </div>
-
-    <div class="density-radio">
+      </div>
+      <div class="density-radio">
+        <p>Population Density: <span id="densityResultDisplay">N/A</span>
+            <br>
         <input type="radio" id="perSqMileRadio" name="populationDensity" value="PerSqMile" checked>
         <label for="perSqMileRadio">Per square mile:</label>
-
         <br>
-        
         <input type="radio" id="perSqKilometerRadio" name="populationDensity" value="PerSqKilometer">
         <label for="perSqKilometerRadio">Per square kilometer:</label>
-        <p>Population Density: <span id="densityResultDisplay">N/A</span></p>
+        </p>
+      </div>
     </div>
-
-
-</div>
-<script defer src="script.js"></script> 
-</body>
+    <script defer src="script.js"></script>
+  </body>
 </html>
-
-
-

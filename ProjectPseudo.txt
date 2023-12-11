@@ -1,28 +1,46 @@
-1. Set up basic HTML, CSS, JS files templates within project folder
-2. Establish html structure with wireframe and decide on basic formatting 
-3. Create a banner or header for a title and author name 
-4.         
+1. Event listener: When the HTML document is completely loaded
+   - Fetch the "countries.json" file using the Fetch API
+   - Parse the JSON data and store it in the 'countries' variable
 
-    //PSEUDO wiki\\
-/*For each country in the list of countries:
-    Create an option element
-    Set the value of the option to the country name
-    Set the text of the option to the country name
+2. Populate the country dropdown menu with options
+   - Iterate through each country in the 'countries' data
+     - Create an option element for the country
+     - Set its value and text properties to the country name
+     - Append the option to the country dropdown menu
 
-    // Create an anchor element for the Wikipedia link
-    Create a wikiLink element
-    Set the href attribute of wikiLink to "https://en.wikipedia.org/wiki/" + country.Name // Adjust the URL structure if needed
-    Set the text content of wikiLink to " (Wikipedia)"
+3. Set default country (e.g., Canada) as selected in the dropdown
+   - Find the index of the default country in the 'countries' array
+   - Set the dropdown's selectedIndex to the default country index
+   - Trigger a change event on the country dropdown to load default country data
 
-    // Append the anchor element to the option element
-    Append wikiLink to the option element
-    // Append the option element to the dropdown
-*/
+4. Event listener: When a country is selected in the dropdown
+   - Update the flag image, country name, population, world population percentage, and area
+   - Set the Wikipedia link for the selected country
 
-    // HTML WILL DISPLAY \\ 
-    // Name of the Country! (done)
-    // An image of the country's flag (done)
-    // the population of the country 
-    // the country's total area, shown in sq. miles (by default) or sq. kilometres, according to user preference (refer to previous assignments(similar to KG conversion))
-    // The Country's population density per square mile (by default) or square KM, according to user preference ()
-    // The country's percentage of the total world population
+5. Event listener: When the population density radio button is changed
+   - Update the displayed population density based on the selected radio button
+   - Calculate the population density using the selected country's population and area
+   - Display the result in the HTML
+
+6. Function: updateDisplayedPopulationDensity()
+   - Get the selected country data from the 'countries' array
+   - Get the selected radio button for population density
+   - If a radio button is selected
+     - If the radio button is for square miles, calculate and display population density
+     - If the radio button is for square kilometers, calculate and display population density
+     - If no radio button is selected, display "N/A"
+
+7. Function: calculateWorldPopulation(countries)
+   - Calculate and return the total world population by summing up populations of all countries
+
+8. Function: calculateWorldPopulationPercentage(countryPopulation, worldPopulation)
+   - Calculate and return the percentage of a country's population compared to the world population
+
+9. HTML Structure:
+   - Country dropdown
+   - Flag image
+   - Selected country name
+   - Population details (population, world population percentage)
+   - Area dropdown and value
+   - Population density radio buttons and result display
+   - Wikipedia link button
