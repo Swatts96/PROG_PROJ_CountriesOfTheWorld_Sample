@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
 
-
+     
 
 
         document.querySelectorAll('.density-radio input[name="populationDensity"]').forEach(function(radio) {
